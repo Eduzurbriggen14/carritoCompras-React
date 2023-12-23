@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/cardProductos.css";
+import "../styles/card.css";
 
 export const Card = ({ imagen, titulo, descripcion, precio }) => {
   const [agregado, setAgregado] = useState(false);
