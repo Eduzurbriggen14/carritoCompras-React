@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Card } from "../components/Card";
+import { ProductosContext } from "../context/ProductosContext";
+import { CarritoContext } from "../context/CarritoContext";
 
 export const ComprasPage = () => {
-  const [productos, setProductos] = useState([]);
+//traemos los productos mediante useContext
+  const {productos} = useContext (ProductosContext)
 
-  //traemos los productos desde la api
-  const fetchProductos = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
-    const data = await response.json();
-    console.log(data);
-    setProductos(data);
-  };
+  const {
+    agregarCompra,
+    eliminarCompra,
+  }= useContext(CarritoContext)
 
-  useEffect(() => {
-    fetchProductos();
-  }, []);
+  const handelAgregar = (compra)=>{
+    agregarCompra(compra)
+
+  }
+  const handelQuitar = (id)=>{
+    eliminarCompra(id)
+
+  }
 
   return (
     <>
@@ -22,6 +27,7 @@ export const ComprasPage = () => {
       <hr />
 
       {productos.map((producto) => {
+        //realizamos un map para mostrar las propiedades del producto que nos interesa mostrar
         return (
           <Card
             key={producto.id} // clave única para cada elemento del array
@@ -29,6 +35,8 @@ export const ComprasPage = () => {
             titulo={producto.title}
             descripcion={producto.description}
             precio={producto.price}
+            handelAgregar={()=>handelAgregar(producto)}
+            handelQuitar={()=>handelQuitar(producto.id)}
           />
         );
       })}
