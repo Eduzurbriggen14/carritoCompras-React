@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Card } from "../components/Card";
 import { ProductosContext } from "../context/ProductosContext";
 import { CarritoContext } from "../context/CarritoContext";
+import "../styles/comprasPage.css"
 
 export const ComprasPage = () => {
 //traemos los productos mediante useContext
@@ -16,17 +17,13 @@ export const ComprasPage = () => {
     agregarCompra(compra)
 
   }
-  const handelQuitar = (id)=>{
-    eliminarCompra(id)
-
-  }
-
   return (
     <>
       <h2>PRODUCTOS</h2>
       <hr />
 
-      {productos.map((producto) => {
+      <div className="product-grid">
+        {productos.map((producto) => {
         //realizamos un map para mostrar las propiedades del producto que nos interesa mostrar
         return (
           <Card
@@ -36,10 +33,10 @@ export const ComprasPage = () => {
             descripcion={producto.description}
             precio={producto.price}
             handelAgregar={()=>handelAgregar(producto)}
-            handelQuitar={()=>handelQuitar(producto.id)}
           />
         );
       })}
+      </div>
     </>
   );
 };

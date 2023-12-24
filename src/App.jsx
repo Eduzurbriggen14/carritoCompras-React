@@ -8,6 +8,8 @@ import { ProductosProvider } from "./context/ProductosProvider";
 import { CarritoProvider } from "./context/CarritoProvider";
 
 function App() {
+
+
   return (
     <ProductosProvider>
       <CarritoProvider>

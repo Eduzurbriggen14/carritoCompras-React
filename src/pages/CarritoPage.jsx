@@ -1,8 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CarritoContext } from "../context/CarritoContext";
+import { FormCompra } from "../components/FormCompra";
+import { Modal, Button } from "react-bootstrap";
 
 export const CarritoPage = () => {
-  const { ListaCompras, eliminarCompra } = useContext(CarritoContext);
+  const { listaCompras, eliminarCompra, aumentarCantidad, disminuirCantidad } =
+    useContext(CarritoContext);
+
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [mostrarModalCompraExitosa, setMostrarModalCompraExitosa] =
+    useState(false);
+
+  const calcularTotal = () => {
+    return listaCompras
+      .reduce((total, item) => total + item.price * item.cantidad, 0)
+      .toFixed(2);
+  };
+
+  const handleComprar = () => {
+    if (listaCompras.length === 0) {
+      alert("El carrito no posee elementos");
+      setMostrarForm(false);
+    } else {
+      setMostrarForm(true);
+    }
+  };
+
+  const handleCompraExitosa = () => {
+    setMostrarForm(false);
+    setMostrarModalCompraExitosa(true);
+  };
+
+  const handleCerrarCompraExitosa = () => {
+    setMostrarModalCompraExitosa(false);
+  };
 
   return (
     <>
@@ -16,11 +47,25 @@ export const CarritoPage = () => {
           </tr>
         </thead>
         <tbody>
-          {ListaCompras.map((item) => (
+          {listaCompras.map((item) => (
             <tr key={item.id}>
               <th scope="row">{item.title}</th>
               <td>{item.price}</td>
-              <td>Cantidad</td>
+              <td>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => disminuirCantidad(item.id)}
+                >
+                  -
+                </button>
+                <button className="btn btn-primary">{item.cantidad}</button>
+                <button
+                  className="btn btn-outline-success"
+                  onClick={() => aumentarCantidad(item.id)}
+                >
+                  +
+                </button>
+              </td>
               <td>
                 <button
                   type="button"
@@ -32,10 +77,53 @@ export const CarritoPage = () => {
               </td>
             </tr>
           ))}
+          <tr>
+            <th>
+              <b>TOTAL : </b>
+            </th>
+            <td>${calcularTotal()}</td>
+            <td></td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
+
       <div className="d-grid gap-2">
-        <button className="btn btn-primary">Comprar</button>
+        <button className="btn btn-primary" onClick={handleComprar}>
+          Comprar
+        </button>
+      </div>
+
+      <div>
+        {mostrarForm && (
+          <Modal show={mostrarForm} onHide={() => setMostrarForm(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>Formulario de Compra</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <FormCompra handleCompraExitosa={handleCompraExitosa} />
+            </Modal.Body>
+          </Modal>
+        )}
+
+        {mostrarModalCompraExitosa && (
+          <Modal
+            show={mostrarModalCompraExitosa}
+            onHide={handleCerrarCompraExitosa}
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Compra Exitosa</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              ¡Gracias por tu compra! Tu pedido ha sido procesado con éxito.
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCerrarCompraExitosa}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
       </div>
     </>
   );
