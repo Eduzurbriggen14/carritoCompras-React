@@ -1,13 +1,13 @@
 # React + Vite
 
-##**PROYECTO CARRITO DE COMPRAS**
+## **PROYECTO CARRITO DE COMPRAS**
 
 Rquisitos previos para el funcionamiento del proyecto
 Tener instalado **node.js**, para verificar esto podes ejecutar el siguiente comando en la terminal: 
 *node --version*
 Si no tenes instalado, podes descargarlo desde si sitio oficial [pagina oficila Node JS](https://nodejs.org/en).
 
-###**CONFIGURACION DEL PROYECTO**
+### **CONFIGURACION DEL PROYECTO**
 
 Una vez que tenemos node.js en nuestra computadora, pasamos a la creacion del proyecto.
 En nuestro caso usamos [Vite](https://vitejs.dev/guide/), este mejora el tiempo de inicio del servidor de desarrollo dividiendo primero los módulos de una aplicación en dos categorías: dependencias y código fuente.
@@ -20,7 +20,7 @@ Al completarse la creacion del proyecto, tenemos que acceder a la carpeta median
 y una vez adentro de nuestra carpeta tenemos que instalar las dependencias mediante
 *npm install*
 
-###**Componentes**
+### **Componentes**
 El componente principal de nuestra aplicacion de app.jsx, use el que viene por defecto al crear el proyecto sin cambiar su nombre, si uno desea puede modificar si nombre. Dentro de este se deberan importar y llamar los componentes necesarios para que el proyecto funcione correctamente
 
 Los componentes **CarritoPage** y **ComprasPage** representan las paginas principales en donde se muestran los productos que se pueden agregar al carrito para luego realizar la compra
@@ -36,8 +36,12 @@ El componente **Card** sirve para determinar la forma en que se mostrara cada pr
 
 Cuando un componente se utiliza dentro de otro componente, el mismo debe importarte en su componente padre. 
 
-###Estuctura del proyecto por carpetas###
-my-project/
+### Estuctura del proyecto por carpetas
+
+[](public/estructuraProyecto.png)
+
+
+<!-- Carrito/
 |-- node_modules/
 |-- public/
 |   |-- iconoCarrito.png
@@ -72,22 +76,22 @@ my-project/
 |-- package.json
 |-- README.md
 |-- vite.config.js
+ -->
 
- 
 
-###Instalacion de dependencias
+### Instalacion de dependencias
 
-####Emotion (Estilos en React):
+#### Emotion (Estilos en React):
 npm install@emotion/react y npm install@emotion/styled.
 
-####Material-UI (Componentes de interfaz de usuario):
+#### Material-UI (Componentes de interfaz de usuario):
 npm install@mui/icons-material y npm install@mui/material.
 
-####React (Biblioteca principal):
+#### React (Biblioteca principal):
 npm install react y npm install react-dom.
 
-####React Bootstrap (Componentes de Bootstrap en React):
+#### React Bootstrap (Componentes de Bootstrap en React):
 npm install react-bootstrap.
 
-####React Router (Enrutamiento en React):
+#### React Router (Enrutamiento en React):
 npm installreact-router-dom.
