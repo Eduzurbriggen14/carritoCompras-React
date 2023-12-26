@@ -50,8 +50,7 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 
 ## ESTRUCTURA
 
-[![estructura-Proyecto.png](https://i.postimg.cc/pTr3QHd6/estructura-Proyecto.png)](https://postimg.cc/xJrsYBMv)
-
+[![estructura.png](https://i.postimg.cc/6psVrk0p/estructura.png)](https://postimg.cc/w7VsHbZC)
 
 ## INSTALACION DE DEPENDENCIAS
 
