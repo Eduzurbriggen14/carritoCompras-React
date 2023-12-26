@@ -38,8 +38,6 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 
 ### Estuctura del proyecto por carpetas
 
-[](public/estructuraProyecto.png)
-
 
 <!-- Carrito/
 |-- node_modules/
