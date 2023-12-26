@@ -55,8 +55,6 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 
 <!-- Carrito/
 |-- node_modules/
-|-- public/
-|   |-- iconoCarrito.png
 |-- src/
 |   |-- components/
 |   |   |-- FormCompra.jsx
@@ -80,6 +78,7 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 |   |-- app.jsx
 |   |-- app.css
 |   |-- main.jsx
+|   |-- iconoCarrito.jsx
 |
 |-- .eslintrx.cjs
 |-- .gitignore
