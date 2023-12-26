@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export const ProductosProvider = ({ children }) => {
   const [productos, setProductos] = useState([]);
 
-  //traemos los productos desde la api
   const fetchProductos = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
