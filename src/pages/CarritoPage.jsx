@@ -35,6 +35,7 @@ export const CarritoPage = () => {
     setMostrarForm(false);
     setMostrarModalCompraExitosa(true);
     vaciarCarrito();
+    localStorage.clear();
   };
 
   const handleCerrarCompraExitosa = () => {
