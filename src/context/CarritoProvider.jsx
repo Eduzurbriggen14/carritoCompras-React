@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { CarritoContext } from "./CarritoContext";
-import { useEffect } from "react";
+
 
 
 const comprasReducer = (state = [], action = {}) => {
@@ -35,6 +35,9 @@ const comprasReducer = (state = [], action = {}) => {
     case "[Carrito] Establecer Carrito":
       console.log("Nuevo carrito:", action.payload); 
       return action.payload;
+    
+    case "[Carrito] Vaciar Carrito":
+      return []
 
     default:
       return state;
@@ -45,18 +48,6 @@ const initialState = [];
 
 export const CarritoProvider = ({ children }) => {
   const [listaCompras, dispatch] = useReducer(comprasReducer, initialState);
-
-  /* useEffect(() => {
-    const storedCarrito = localStorage.getItem("carrito");
-    if (storedCarrito) {
-      const parsedCarrito = JSON.parse(storedCarrito);
-      establecerCarritoDesdeLocalStorage(parsedCarrito);
-    }
-  }, []);
-  
-  useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(ListaCompras));
-  }, [ListaCompras]); */
 
   const agregarCompra = (compra) => {
     compra.cantidad = 1;
@@ -91,13 +82,9 @@ export const CarritoProvider = ({ children }) => {
     dispatch(action);
   };
 
-  const establecerCarritoDesdeLocalStorage = (carrito) => {
-    const action = {
-      type: "[Carrito] Establecer Carrito",
-      payload: carrito,
-    };
-    dispatch(action);
-  };
+  const vaciarCarrito = () => {
+  dispatch({ type: "[Carrito] Vaciar Carrito" });
+};
 
   return (
     <CarritoContext.Provider
@@ -107,6 +94,7 @@ export const CarritoProvider = ({ children }) => {
         aumentarCantidad,
         disminuirCantidad,
         eliminarCompra,
+        vaciarCarrito
       }}
     >
       {children}

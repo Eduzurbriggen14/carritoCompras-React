@@ -4,7 +4,7 @@ import { FormCompra } from "../components/FormCompra";
 import { Modal, Button } from "react-bootstrap";
 
 export const CarritoPage = () => {
-  const { listaCompras, eliminarCompra, aumentarCantidad, disminuirCantidad } =
+  const { listaCompras, eliminarCompra, aumentarCantidad, disminuirCantidad, vaciarCarrito } =
     useContext(CarritoContext);
 
   const [mostrarForm, setMostrarForm] = useState(false);
@@ -29,10 +29,12 @@ export const CarritoPage = () => {
   const handleCompraExitosa = () => {
     setMostrarForm(false);
     setMostrarModalCompraExitosa(true);
+    vaciarCarrito()
   };
 
   const handleCerrarCompraExitosa = () => {
     setMostrarModalCompraExitosa(false);
+    
   };
 
   return (
