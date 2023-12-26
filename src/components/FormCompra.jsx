@@ -43,7 +43,7 @@ export const FormCompra = ({ handleCompraExitosa }) => {
     //validamos que el formato de email sea correcto
     if (!validateEmail()) {
       alert("Ingrese un correo electrónico válido");
-      /* return; */
+      return;
     }
 
     setTimeout(() => {

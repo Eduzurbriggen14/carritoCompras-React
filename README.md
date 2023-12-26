@@ -53,43 +53,6 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 [![estructura-Proyecto.png](https://i.postimg.cc/pTr3QHd6/estructura-Proyecto.png)](https://postimg.cc/xJrsYBMv)
 
 
-<!-- Carrito/
-|-- node_modules/
-|-- src/
-|   |-- components/
-|   |   |-- FormCompra.jsx
-|   |   |-- NavBar.jsx
-|   |   |-- Card.jsx
-|   |
-|   |-- context/
-|   |   |-- productosContext.jsx
-|   |   |-- productosProvider.jsx
-|   |   |-- CarritoContext.jsx
-|   |   |-- CarritoProvider.jsx
-|   |
-|   |-- pages/
-|   |   |-- CarritoPage.jsx
-|   |   |-- ComprasPage.jsx
-|   |
-|   |-- styles/
-|   |   |-- card.css
-|   |   |-- comprasPage.css
-|   |
-|   |-- app.jsx
-|   |-- app.css
-|   |-- main.jsx
-|   |-- iconoCarrito.jsx
-|
-|-- .eslintrx.cjs
-|-- .gitignore
-|-- index.html
-|-- package-lock.json
-|-- package.json
-|-- README.md
-|-- vite.config.js
- -->
-
-
 ## INSTALACION DE DEPENDENCIAS
 
 #### Emotion (Estilos en React):
