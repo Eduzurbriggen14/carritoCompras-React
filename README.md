@@ -89,7 +89,7 @@ Este paquete nos ayudará a implementar nuestro código en la rama gh-pages que 
 Una vez instalado el paquete necesario, tenemos que realizar algunas modificaciones en nuestro archivo **pakage.json** para que gh-pages funcione correctamente, que seran las siguientes.
 
 
-Agregame **homepage**
+Agregamos **homepage**
 
     {
       "name": "starter-project",
