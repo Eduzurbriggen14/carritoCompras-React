@@ -4,7 +4,8 @@
 
 Rquisitos previos para el funcionamiento del proyecto
 Tener instalado **node.js**, para verificar esto podes ejecutar el siguiente comando en la terminal: 
-*node --version*.
+
+    node --version
 Si no lo tenes instalado, podes descargarlo desde si sitio oficial [pagina oficila Node JS](https://nodejs.org/en).
 
 ## **CONFIGURACION DEL PROYECTO**
@@ -14,7 +15,7 @@ En nuestro caso usamos [Vite](https://vitejs.dev/guide/), este mejora el tiempo 
 
 Creamos una carpeta para el proyecto y una vez dentro de la misma, ejecutamos el siguiente comando:
 
-*npm create vite@latest*.
+    npm create vite@latest
 
 nos pide un nombre para nuestro ptoyecto, escribimos el de nuestra preferencia "carrito-compras" por ejemplo ( el nombre no puede tener espacios en blanco).
 
@@ -22,15 +23,15 @@ luego seleccionamos las opciones **React y JavaScript**, sleccionado esto, se es
 
 Al completarse la creacion del proyecto, tenemos que acceder a la carpeta mediante el comando
 
-*cd carrito-compras*.
+    cd carrito-compras
 
 y una vez adentro de nuestra carpeta tenemos que instalar las dependencias mediante
 
-*npm install*
+    npm install
 
 luego podemos comprobar si nuestro proyecto esta funcionando mediante el comando
 
-*npm run dev*
+    npm run dev
 
 esto hace que nuestra proyecto se ejecute en el servidor local
 
@@ -64,16 +65,75 @@ Cuando un componente se utiliza dentro de otro componente, el mismo debe importa
 ## INSTALACION DE DEPENDENCIAS
 
 #### Emotion (Estilos en React):
-npm install@emotion/react y npm install@emotion/styled.
+    npm install@emotion/react y npm install@emotion/styled.
 
 #### Material-UI (Componentes de interfaz de usuario):
-npm install@mui/icons-material y npm install@mui/material.
+    npm install@mui/icons-material y npm install@mui/material.
 
 #### React (Biblioteca principal):
-npm install react y npm install react-dom.
+    npm install react y npm install react-dom.
 
 #### React Bootstrap (Componentes de Bootstrap en React):
-npm install react-bootstrap.
+    npm install react-bootstrap.
 
 #### React Router (Enrutamiento en React):
-npm installreact-router-dom.
+    npm installreact-router-dom.
+
+### Gh pages (lo usamos pasar publicar el proyecto en github pages)
+    npm install gh-pages
+
+## SUBIR PAGINA A GH-PAGES
+Este paquete nos ayudará a implementar nuestro código en la rama gh-pages que se usará para alojar nuestra aplicación en GitHub Pages.
+
+
+Una vez instalado el paquete necesario, tenemos que realizar algunas modificaciones en nuestro archivo **pakage.json** para que gh-pages funcione correctamente, que seran las siguientes.
+
+
+Agregame **homepage**
+
+    {
+      "name": "starter-project",
+  
+      "homepage": "https://<nombre de usuario de github>.github.io/<nombre de nuestro proyecto>/", <--- https://eduzurbriggen14.github.io/carritoCompras-React/
+  
+      "version": "0.1.0",
+      
+      /....
+    }
+
+Agregamos dos claves en nuestro scripts
+
+    "scripts": {
+
+        "start": "react-scripts start",
+    
+        "predeploy": "npm run build", <---
+    
+        "deploy": "gh-pages -d dist", <---
+    
+        "build": "react-scripts build",
+    
+        "test": "react-scripts test",
+    
+        "eject": "react-scripts eject"
+    },
+
+Por ultimo necesitamos escribir en nuestra terminar el comando 
+
+    npm run deploy
+
+Este comando se encarga de compilar tu aplicación y enviarla a una rama llamada gh-pages, que GitHub usa para vincularse con las páginas de GitHub.
+
+
+Luego nos dirigimos a nuestro repositorio, en la seccion deployment podemos ver el estado de nuestra publicacion, cuando nos aparezca el tilde verde se hara completado todo el proceso.
+
+Ahora buscamos la seccion settings y luego nos dirigimos hasta pages.
+
+Dentro de la seccion pages entontraremos nuestro link y un boton **Visit site** para ir a nuestra pagina
+
+
+    https://eduzurbriggen14.github.io/carritoCompras-React/
+
+
+
+
