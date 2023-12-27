@@ -19,9 +19,9 @@ Creamos una carpeta para el proyecto y una vez dentro de la misma, ejecutamos el
 
 nos pide un nombre para nuestro ptoyecto, escribimos el de nuestra preferencia "carrito-compras" por ejemplo ( el nombre no puede tener espacios en blanco).
 
-luego seleccionamos las opciones **React y JavaScript**, sleccionado esto, se estara creando la estructura de nuestro proyectos.
+luego seleccionamos las opciones **React y JavaScript**, seleccionado esto, se estara creando la estructura de nuestro proyecto.
 
-Al completarse la creacion del proyecto, tenemos que acceder a la carpeta mediante el comando
+Al completarse la creacion del proyecto, tenemos que acceder a la carpeta donde se ha creado mediante el comando
 
     cd carrito-compras
 
