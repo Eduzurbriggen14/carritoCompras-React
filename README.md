@@ -4,15 +4,16 @@
 
 Rquisitos previos para el funcionamiento del proyecto
 Tener instalado **node.js**, para verificar esto podes ejecutar el siguiente comando en la terminal: 
-*node --version*
-Si no tenes instalado, podes descargarlo desde si sitio oficial [pagina oficila Node JS](https://nodejs.org/en).
+*node --version*.
+Si no lo tenes instalado, podes descargarlo desde si sitio oficial [pagina oficila Node JS](https://nodejs.org/en).
 
 ## **CONFIGURACION DEL PROYECTO**
 
 Una vez que tenemos node.js en nuestra computadora, pasamos a la creacion del proyecto.
 En nuestro caso usamos [Vite](https://vitejs.dev/guide/), este mejora el tiempo de inicio del servidor de desarrollo dividiendo primero los módulos de una aplicación en dos categorías: dependencias y código fuente.
 
-Creamos una carpeta para el proyecto y una vez dentro de la misma, ejecutamos el siguiente comando:. 
+Creamos una carpeta para el proyecto y una vez dentro de la misma, ejecutamos el siguiente comando:
+
 *npm create vite@latest*.
 
 nos pide un nombre para nuestro ptoyecto, escribimos el de nuestra preferencia "carrito-compras" por ejemplo ( el nombre no puede tener espacios en blanco).
@@ -20,10 +21,18 @@ nos pide un nombre para nuestro ptoyecto, escribimos el de nuestra preferencia "
 luego seleccionamos las opciones **React y JavaScript**, sleccionado esto, se estara creando la estructura de nuestro proyectos.
 
 Al completarse la creacion del proyecto, tenemos que acceder a la carpeta mediante el comando
+
 *cd carrito-compras*.
 
 y una vez adentro de nuestra carpeta tenemos que instalar las dependencias mediante
+
 *npm install*
+
+luego podemos comprobar si nuestro proyecto esta funcionando mediante el comando
+
+*npm run dev*
+
+esto hace que nuestra proyecto se ejecute en el servidor local
 
 ## **COMPONENTES**
 
